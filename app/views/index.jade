@@ -1,0 +1,20 @@
+extends layouts/default
+
+block content
+    .main.container
+      .ui.left.aligned
+        .navbar
+          .ui.right.aligned.header        
+            i.circular.question.icon 
+            何謂火線         
+        .logo
+          img.ui.medium.image(src="http://placehold.it/350x150&text=POP+on+Fire(Pre-Alpha)")
+
+          
+      .ui.segment.fire-map
+          火線地圖
+          #map-canvas
+          
+      .ui.segment.search-bar
+          檢索
+        

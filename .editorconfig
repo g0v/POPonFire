@@ -1,0 +1,15 @@
+; See http://EditorConfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_size = 4
+indent_style = space
+
+[*.js]
+indent_size = 4
+indent_style = space
+
+[*.jade]
+indent_size = 4
+indent_style = space

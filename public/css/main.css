@@ -1,0 +1,18 @@
+.container {
+  width: 800px;
+  margin: 0px auto;
+}
+.navbar {
+  float: right;
+}
+.fire-map {
+  height: 500px;
+}
+.search-bar {
+  height: 200px;
+}
+#map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+}
