@@ -1,0 +1,72 @@
+extends layouts/default
+
+block content
+  .main.container
+    .ui.left.aligned
+      .navbar
+        .ui.right.aligned.header                  
+            i.circular.question.icon 
+            | 何謂火線         
+      .logo
+        img.ui.medium.image(src="http://placehold.it/350x150&text=POP+on+Fire(Pre-Alpha)")
+
+        
+        .ui.segment.fire-map
+            .ui.red.ribbon.label 
+              | 火線地圖
+            #map-canvas
+            
+        .ui.segment.search-box   
+            .ui.blue.ribbon.label 
+              | 檢索
+            .search-bar
+              .ui.compact.menu
+                .ui.dropdown.item
+                  地點 
+                  i.dropdown.icon
+                  .menu
+                    a.item
+                      | 台北市
+                    a.item
+                      | 新北市
+                    a.item
+                      | 高雄市
+              .ui.compact.menu
+                .ui.dropdown.item
+                  開放方式 
+                  i.dropdown.icon
+                  .menu
+                    a.item
+                      | BOT
+              .ui.compact.menu
+                .ui.dropdown.item
+                  經營單位 
+                  i.dropdown.icon
+                  .menu
+                    a.item
+                      | 不具名
+                    a.item
+                      | 不具名
+                    a.item
+                      | 不具名    
+               .ui.icon.input
+                 input(type="text",placeholder="地名, 人名...")
+                 i.inverted.search.icon
+                  
+        .ui.segment.piece-map    
+          .ui.three.column.grid
+            .column
+              .ui.segment
+               img(src="http://maps.googleapis.com/maps/api/staticmap?center=25.033493, 121.564101&zoom=14&size=200x200&sensor=false")
+            .column
+              .ui.segment
+               img(src="http://maps.googleapis.com/maps/api/staticmap?center=25.033493, 121.564101&zoom=14&size=200x200&sensor=false")
+            .column
+              .ui.segment
+               img(src="http://maps.googleapis.com/maps/api/staticmap?center=25.033493, 121.564101&zoom=14&size=200x200&sensor=false")
+            .column
+              .ui.segment
+               img(src="http://maps.googleapis.com/maps/api/staticmap?center=25.033493, 121.564101&zoom=14&size=200x200&sensor=false")             
+        
+
+        
