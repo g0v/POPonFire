@@ -1,4 +1,5 @@
-#!/bin/env node
+'use strict';
+
 var express = require('express'),
     http = require('http');
 

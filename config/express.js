@@ -1,6 +1,9 @@
+'use strict';
+
 var express = require('express');
 
-module.exports = function(app,config,passport){
+module.exports = function(app,config){
+
     var setConfigs = {
         'port'          : config.port,
         'ip'            : config.ip,
@@ -14,9 +17,11 @@ module.exports = function(app,config,passport){
         express.cookieParser(),
         express.bodyParser(),
     ];
+    
     for (var key in setConfigs){
         app.set(key,setConfigs[key]);
     }
+
     useConfigs.forEach(function(val){
         app.use(val);
     });
