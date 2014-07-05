@@ -1,92 +1,20 @@
-var model_path = '../models/',models={};
 
-var _getModel = function(container){
-    if (!(container in models)){
-        models[container] = _loadModel(container);
-    }
+exports.cityMap = function(req,res,next) {
 
-    return models[container].model;
-};
+    // Fake JSON Data
+    var citymap = {};
 
-var _getModelName = function(container) {
-    if (!(container in models)){
-        models[container] = _loadModel(container);
-    }
-
-    return models[container].name;
-};
-
-var _loadModel = function(container){
-    // TODO: check file is exist.
-    var model = require(model_path + container);
-    var name = model.modelName.toLowerCase();
-    var result = {
-        name : name,
-        model : model
+    citymap['taipei101'] = {
+      x: 25.033493, 
+      y: 121.564101,
+      population: 50
     };
 
-    return result;
-};
+    citymap['president'] = {
+      x: 25.039941, 
+      y: 121.512812,
+      population: 30
+    };
 
-exports.findAll = function(req,res,next){
-    var container = req.params.container;
-    var model = _getModel(container);
-
-	model.find(function(err,objs){
-        var modelName = _getModelName(container);
-        var result = {};
-        result[modelName] = objs;
-		res.send(result);
-	});
-};
-
-exports.findById = function(req,res,next){
-    var container = req.params.container;
-    var model = _getModel(container);
-
-	model.findById(req.params.id,function(err,obj){
-        var modelName = _getModelName(container);
-        var result = {};
-        result[modelName] = obj;
-		res.send(result);
-	});
-};
-
-exports.createNew = function(req,res){
-    var container = req.params.container;
-    var model = _getModel(container);
-    var modelName = _getModelName(container);
-    var record = new model(req.body[modelName]);
-
-	record.save(function(err,obj){
-        var result = {};
-        result[modelName] = obj;
-
-		res.send(result);
-	});
-};
-
-exports.updateById = function(req,res,next){
-    var container = req.params.container;
-    var model = _getModel(container);
-    var modelName = _getModelName(container);
-
-	model.findByIdAndUpdate(req.params.id,req.body[modelName],
-        function(err,numberAffected,raw){
-            if (err)
-                console.log(err);
-            res.send(200);
-	    });
-};
-
-exports.removeById = function(req,res,next){
-    var container = req.params.container;
-    var model = _getModel(container);
-
-	model.findByIdAndRemove(req.params.id,
-        function(err){
-		    if (err)
-			    next(err);
-            res.send(200);
-	    });
+    res.send(citymap);
 };
