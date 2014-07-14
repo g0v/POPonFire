@@ -5,16 +5,24 @@ exports.cityMap = function(req,res,next) {
     var citymap = {};
 
     citymap['taipei101'] = {
-      x: 25.033493, 
-      y: 121.564101,
-      population: 50
+        "addr": 'Taipei 101',
+        "area": 100
     };
 
     citymap['president'] = {
-      x: 25.039941, 
-      y: 121.512812,
-      population: 30
+        "addr": '中華民國總統府',
+        "area": 10
     };
+
+    citymap['ntuh'] = {
+        "addr": '臺大醫院',
+        "area": 50
+    };
+
+    citymap['somewhere']  = {
+        "addr": "新北市新店區青潭段楣子寮小段0095-0002地號",
+        "area": 719.22
+    }; 
 
     res.send(citymap);
 };
