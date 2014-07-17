@@ -1,6 +1,4 @@
 
-var config = require('../../config/config');
-
 var cities = {
 "臺北市":"臺北市",
 "新北市":"新北市",
@@ -49,7 +47,7 @@ units = {
 
 exports.index = function(req, res){
     res.render('index', { 
-        title: config.appName, 
+        title: req.app.get("appName"), 
         userName: 'Guest', 
         cities: JSON.stringify(cities),
         devWays: JSON.stringify(devWays),
