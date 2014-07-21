@@ -1,6 +1,6 @@
+'use strict';
 
-var config = require('../../config/config');
-
+// 地點 
 var cities = {
 "臺北市":"臺北市",
 "新北市":"新北市",
@@ -24,8 +24,10 @@ var cities = {
 "澎湖縣":"澎湖縣",
 "金門縣":"金門縣",
 "連江縣":"連江縣"
-},
-devWays = {
+};
+
+// 開發方式
+var devWays = {
 "標租":"標租",
 "‪‎‪‎標售":"‪‎‪‎標售",
 "暫時性使用":"暫時性使用",
@@ -36,8 +38,10 @@ devWays = {
 "參與捷運聯合開發":"參與捷運聯合開發",
 "參與都市更新":"參與都市更新",
 "眷村/營區改建":"眷村/營區改建"
-},
-units = {
+};
+
+// 經營單位
+var units = {
 "財政部國有財產署":"財政部國有財產署",
 "國防部":"國防部",
 "台北市政府財政局":"台北市政府財政局",
@@ -49,8 +53,7 @@ units = {
 
 exports.index = function(req, res){
     res.render('index', { 
-        title: config.appName, 
-        userName: 'Guest', 
+        title: req.app.get("appName"), 
         cities: JSON.stringify(cities),
         devWays: JSON.stringify(devWays),
         units: JSON.stringify(units)
