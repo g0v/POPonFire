@@ -1,12 +1,12 @@
 'use strict';
 
-var express = require('express'),
-    http = require('http');
+var express = require('express');
+var http = require('http');
 
 // load configurations
-var env = process.env.NODE_ENV || 'development',
-    config = require('./config/config'),
-    envConfig = config[env];
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config/config');
+var envConfig = config[env];
 
 var app = express();
 
