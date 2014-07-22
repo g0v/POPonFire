@@ -11,50 +11,50 @@ block content
                 img.ui.medium.image(src="http://placehold.it/350x150&text=POP+on+Fire(Pre-Alpha)")
 
             
-            .ui.segment.fire-map
-                .ui.red.ribbon.label 
-                  | 火線地圖
-                #fire-map-canvas
+        .ui.segment.fire-map
+            .ui.red.ribbon.label 
+              | 火線地圖
+            #fire-map-canvas
+            
+        .ui.segment.search-box   
+            .ui.blue.ribbon.label 
+              | 檢索
+            .search-bar
+                .ui.compact.menu
+                    .ui.dropdown.item
+                        | 地點 
+                        i.dropdown.icon
+                        .menu
+                            -var cityList = JSON.parse(cities)
+                            -for(var city in cityList)
+                                a.item 
+                                  | #{city}  
+                .ui.compact.menu
+                    .ui.dropdown.item
+                        | 開發方式 
+                        i.dropdown.icon
+                        .menu
+                            -var devWayList = JSON.parse(devWays)
+                            -for(var devWay in devWayList)
+                                a.item 
+                                  | #{devWay}                  
+   
+                .ui.compact.menu
+                    .ui.dropdown.item
+                        | 經營單位 
+                        i.dropdown.icon
+                        .menu
+                            -var unitList = JSON.parse(units)
+                            -for(var unit in unitList)
+                                a.item 
+                                    | #{unit}                                        
                 
-            .ui.segment.search-box   
-                .ui.blue.ribbon.label 
-                  | 檢索
-                .search-bar
-                    .ui.compact.menu
-                        .ui.dropdown.item
-                            | 地點 
-                            i.dropdown.icon
-                            .menu
-                                -var cityList = JSON.parse(cities)
-                                -for(var city in cityList)
-                                    a.item 
-                                      | #{city}  
-                    .ui.compact.menu
-                        .ui.dropdown.item
-                            | 開發方式 
-                            i.dropdown.icon
-                            .menu
-                                -var devWayList = JSON.parse(devWays)
-                                -for(var devWay in devWayList)
-                                    a.item 
-                                      | #{devWay}                  
-       
-                    .ui.compact.menu
-                        .ui.dropdown.item
-                            | 經營單位 
-                            i.dropdown.icon
-                            .menu
-                                -var unitList = JSON.parse(units)
-                                -for(var unit in unitList)
-                                    a.item 
-                                        | #{unit}                                        
-                    
-                    .ui.icon.input
-                     input(type="text",placeholder="地名, 人名...")
-                     i.inverted.search.icon
+                .ui.icon.input
+                 input(type="text",placeholder="地名, 人名...")
+                 i.inverted.search.icon
                       
-            .ui.segment.piece-map    
-              .ui.three.column.grid 
+        .ui.segment.piece-map    
+          .ui.three.column.grid 
         
 
         
