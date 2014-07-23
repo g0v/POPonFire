@@ -20,34 +20,44 @@ block content
             .ui.blue.ribbon.label 
               | 檢索
             .search-bar
-                .ui.compact.menu
-                    .ui.dropdown.item
-                        | 地點 
-                        i.dropdown.icon
-                        .menu
-                            -var cityList = JSON.parse(cities)
-                            -for(var city in cityList)
-                                a.item 
-                                  | #{city}  
-                .ui.compact.menu
-                    .ui.dropdown.item
-                        | 開發方式 
-                        i.dropdown.icon
-                        .menu
-                            -var devWayList = JSON.parse(devWays)
-                            -for(var devWay in devWayList)
-                                a.item 
-                                  | #{devWay}                  
+                .ui.selection.dropdown
+                    input(type="hidden", name="city")
+                    .default.text
+                        | 地點
+                    i.dropdown.icon
+                    .menu
+                        .item(data-value='')
+                            | 地點
+                        -var cityList = JSON.parse(cities)
+                        -for(var city in cityList)
+                            .item(data-value='#{city}') 
+                              | #{city}  
+
+                .ui.selection.dropdown
+                    input(type="hidden", name="devWay")
+                    .default.text
+                        | 開發方式
+                    i.dropdown.icon
+                    .menu
+                        .item(data-value='')
+                            | 開發方式
+                        -var devWayList = JSON.parse(devWays)
+                        -for(var devWay in devWayList)
+                            .item(data-value='#{devWay}') 
+                              | #{devWay}                  
    
-                .ui.compact.menu
-                    .ui.dropdown.item
-                        | 經營單位 
-                        i.dropdown.icon
-                        .menu
-                            -var unitList = JSON.parse(units)
-                            -for(var unit in unitList)
-                                a.item 
-                                    | #{unit}                                        
+                .ui.selection.dropdown
+                    input(type="hidden", name="unit")
+                    .default.text
+                        | 經營單位
+                    i.dropdown.icon
+                    .menu
+                        .item(data-value='')
+                            | 經營單位
+                        -var unitList = JSON.parse(units)
+                        -for(var unit in unitList)
+                            .item(data-value='#{unit}') 
+                                | #{unit}                                        
                 
                 .ui.icon.input
                  input(type="text",placeholder="地名, 人名...")

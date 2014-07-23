@@ -12,6 +12,7 @@
     "express": "3.3.8",
     "jade": "*",
     "gulp": "~3.8.5",
-    "gulp-nodemon": "~1.0.4"
+    "gulp-nodemon": "~1.0.4",
+    "gulp-jshint": "^1.7.1"
   }
 }

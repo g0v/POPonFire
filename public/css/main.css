@@ -2,28 +2,36 @@
     width: 800px;
     margin: 0 auto;
 }
+
 .navbar {
     float: right;
 }
+
 .fire-map {
     height: 600px;
 }
+
 .search-bar {
     float: right;
     height: 50px;
     margin-top: 30px;
 }
+
 .footer {
     text-align: right;
+    margin-top: 20px;
 }
+
 #fire-map-canvas {
     height: 95%;
     margin: 10px;
     padding: 0;
 }
+
 .piece-map-segment {
     height: 300px;
 }
+
 .piece-map-canvas {
     height: 95%;
 }
