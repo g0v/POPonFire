@@ -8,7 +8,11 @@
   },
   "author": "dz1984",
   "license": "MIT",
-  "devDependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/g0v/POPonFire.git"
+  },
+  "dependencies": {
     "express": "3.3.8",
     "jade": "*",
     "gulp": "~3.8.5",
