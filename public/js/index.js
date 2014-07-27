@@ -13,9 +13,13 @@ Search.prototype.setUnit = function (unit) {
   this.vars.unit = unit;
   this.run();
 }
+Search.prototype.setKeyword = function (keyword) {
+  this.vars.keyword = keyword;
+  this.run();
+}
 Search.prototype.run = function () {
   var vars = this.vars;
-  var query = ['city', 'devWay', 'unit'].map(function (field) {
+  var query = ['city', 'devWay', 'unit', 'keyword'].map(function (field) {
     return field + '=' + (vars[field] ? vars[field] : '');
   }).join('&');
   $.getJSON('/api/search?' + query, function(searchJSON){
