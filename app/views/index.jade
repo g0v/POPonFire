@@ -27,7 +27,7 @@ block content
                             .menu
                                 -var cityList = JSON.parse(cities)
                                 -for(var city in cityList)
-                                    a.item 
+                                    a.item(onclick="window.search.setCity('#{city}')")
                                       | #{city}  
                     .ui.compact.menu
                         .ui.dropdown.item
@@ -36,7 +36,7 @@ block content
                             .menu
                                 -var devWayList = JSON.parse(devWays)
                                 -for(var devWay in devWayList)
-                                    a.item 
+                                    a.item(onclick="window.search.setDevWay('#{devWay}')")
                                       | #{devWay}                  
        
                     .ui.compact.menu
@@ -46,7 +46,7 @@ block content
                             .menu
                                 -var unitList = JSON.parse(units)
                                 -for(var unit in unitList)
-                                    a.item 
+                                      a.item(onclick="window.search.setUnit('#{unit}')") 
                                         | #{unit}                                        
                     
                     .ui.icon.input
