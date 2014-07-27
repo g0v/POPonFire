@@ -18,7 +18,7 @@ exports.onFire = function(req,res,next) {
       {
           "number": "31",
           "addr": '中華民國總統府',
-          "city": "台北市",
+          "city": "臺北市",
           "devWay": "暫時性使用",
           "unit": "國民黨黨產",
           "area": 10,
@@ -27,7 +27,7 @@ exports.onFire = function(req,res,next) {
       {
           "number": "10",
           "addr": '臺大醫院',
-          "city": "台北市",
+          "city": "臺北市",
           "devWay": "優先承購",
           "unit": "學產地",
           "area": 50,
@@ -56,6 +56,8 @@ exports.toSearch = function(req, res, next) {
         if (req.query[fields[i]] && data[fields[i]] !== req.query[fields[i]])
           return false;
       }
+      if (req.query.keyword && data.addr.indexOf(req.query.keyword) == -1)
+        return false;
       return true;
     }
 
@@ -64,7 +66,7 @@ exports.toSearch = function(req, res, next) {
       {
           "number": "10",
           "addr": '臺大醫院',
-          "city": "台北市",
+          "city": "臺北市",
           "devWay": "優先承購",
           "unit": "學產地",
           "area": 50,
