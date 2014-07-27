@@ -17,6 +17,11 @@ $ npm install
 $ gulp serve
 ```
 
+## API
+
+`curl http://localhost:8089/api/onfire`
+`curl http://localhost:8089/api/search?city=&devWay=&unit=&keyword=`
+
 ## 授權條款
 
 The MIT license(MIT)
