@@ -19,40 +19,43 @@ block content
             .ui.segment.search-box   
                 .ui.blue.ribbon.label 
                   | 檢索
-                .search-bar
-                    .ui.compact.menu
-                        .ui.dropdown.item
-                            | 地點 
-                            i.dropdown.icon
-                            .menu
-                                -var cityList = JSON.parse(cities)
-                                -for(var city in cityList)
-                                    a.item(onclick="window.search.setCity('#{city}')")
-                                      | #{city}  
-                    .ui.compact.menu
-                        .ui.dropdown.item
-                            | 開發方式 
-                            i.dropdown.icon
-                            .menu
-                                -var devWayList = JSON.parse(devWays)
-                                -for(var devWay in devWayList)
-                                    a.item(onclick="window.search.setDevWay('#{devWay}')")
-                                      | #{devWay}                  
-       
-                    .ui.compact.menu
-                        .ui.dropdown.item
-                            | 經營單位 
-                            i.dropdown.icon
-                            .menu
-                                -var unitList = JSON.parse(units)
-                                -for(var unit in unitList)
-                                      a.item(onclick="window.search.setUnit('#{unit}')") 
-                                        | #{unit}                                        
+                .search-bar.ui.compact.menu
+                    .ui.selection.dropdown.item
+                        .text
+                          | 地點 
+                        i.dropdown.icon
+                        .menu
+                            -var cityList = JSON.parse(cities)
+                            -for(var city in cityList)
+                                a.item(onclick="window.search.setCity('#{city}')")
+                                  | #{city}  
+
+                    .ui.selection.dropdown.item
+                        .text
+                          | 開發方式 
+                        i.dropdown.icon
+                        .menu
+                            -var devWayList = JSON.parse(devWays)
+                            -for(var devWay in devWayList)
+                                a.item(onclick="window.search.setDevWay('#{devWay}')")
+                                  | #{devWay}                  
+   
+                    .ui.selection.dropdown.item
+                        .text
+                          | 經營單位 
+                        i.dropdown.icon
+                        .menu
+                            -var unitList = JSON.parse(units)
+                            -for(var unit in unitList)
+                                  a.item(onclick="window.search.setUnit('#{unit}')") 
+                                    | #{unit}                                        
                     
-                    .ui.icon.input
-                     input(type="text" id="searchKeyword" placeholder="地名, 人名...")
-                     i.inverted.search.icon(onclick="window.search.setKeyword(document.getElementById('searchKeyword').value)")
-                      
+                    .right.compact.menu
+                        .item
+                            .ui.icon.input
+                                input(type="text" id="searchKeyword" placeholder="地名, 人名...")
+                                i.search.icon(onclick="window.search.setKeyword(document.getElementById('searchKeyword').value)")
+
             .ui.segment.piece-map    
               .ui.three.column.grid 
         
