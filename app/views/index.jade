@@ -50,8 +50,8 @@ block content
                                         | #{unit}                                        
                     
                     .ui.icon.input
-                     input(type="text",placeholder="地名, 人名...")
-                     i.inverted.search.icon
+                     input(type="text" id="searchKeyword" placeholder="地名, 人名...")
+                     i.inverted.search.icon(onclick="window.search.setKeyword(document.getElementById('searchKeyword').value)")
                       
             .ui.segment.piece-map    
               .ui.three.column.grid 
