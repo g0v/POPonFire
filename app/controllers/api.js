@@ -50,9 +50,17 @@ exports.onFire = function(req,res,next) {
 exports.toSearch = function(req, res, next) {
 
     // TODO : need a search engine for catch data
+    function by_query(data) {
+      var fields = ['city', 'devWay', 'unit'];
+      for (var i = 0; i < fields.length; i++) {
+        if (req.query[fields[i]] && data[fields[i]] !== req.query[fields[i]])
+          return false;
+      }
+      return true;
+    }
 
     // Fake search result JSON data
-    var result = [
+    var fakedata = [
       {
           "number": "10",
           "addr": '臺大醫院',
@@ -73,9 +81,8 @@ exports.toSearch = function(req, res, next) {
       } 
     ];
 
-    res.send(result);
+    res.send(fakedata.filter(by_query));
 };
-
 
 
 
