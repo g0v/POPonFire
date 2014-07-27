@@ -12,8 +12,8 @@
     float: right;
 }
 .footer {
-    text-align: center;
-    margin: 20px auto;
+    text-align: right;
+    margin-top: 20px;
 }
 #fire-map-canvas {
     height: 95%;

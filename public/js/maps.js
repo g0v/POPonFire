@@ -1,4 +1,4 @@
-// Utility 
+// Utility helper
 var createUUID = function() {
     // http://www.ietf.org/rfc/rfc4122.txt
     var s = [];
@@ -14,6 +14,9 @@ var createUUID = function() {
     return uuid;
 };
 
+/*
+    create a red cicle on the map.
+*/
 var createFireCircle = function(map, addr, area) {
 
     var geocoder = new google.maps.Geocoder();
@@ -44,9 +47,11 @@ var createFireCircle = function(map, addr, area) {
     }); 
 };
 
+/*
+    create the on-fire map.
+*/
 var createOnFireMap = function(onFireJSON) {
 
-    // create the map.
     var mapOptions = {
       zoom: 11,
       center: new google.maps.LatLng(25.033493, 121.564101),
@@ -66,6 +71,9 @@ var createOnFireMap = function(onFireJSON) {
     }
 };
 
+/*
+    create the piece map.
+*/
 var createPieceMap = function(searchJSON) {
     $(".piece-map > .column.grid").children().remove();
 
@@ -75,18 +83,18 @@ var createPieceMap = function(searchJSON) {
         var addr = result.addr;
         var area = result.area;
 
-        // add a map element
+        // add a map DOM element
         var id = createUUID();
-        var column = $("<div>").addClass('column');
+        var column = $("<div>").addClass('column').addClass('piece-column');
         var segment = $("<div>").addClass('ui segment').addClass("piece-map-segment");
         var mapElement = $("<div>").attr('id',id).addClass("piece-map-canvas");
 
         segment.append(mapElement);
-        column.append(segment)
+        column.append(segment);
 
         $(".piece-map > .column.grid").append(column);
 
-        // create the piece map
+        // create a new piece map
         var mapOptions = {
               zoom: 12,
               mapTypeId: google.maps.MapTypeId.TERRAIN
@@ -97,5 +105,4 @@ var createPieceMap = function(searchJSON) {
 
         createFireCircle(newMap, addr, area);
     }
-
 };
