@@ -8,10 +8,8 @@
 .fire-map {
     height: 600px;
 }
-.search-bar {
+#search-bar {
     float: right;
-    height: 50px;
-    margin-top: 30px;
 }
 .footer {
     text-align: center;
