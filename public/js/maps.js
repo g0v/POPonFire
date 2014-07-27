@@ -67,6 +67,7 @@ var createOnFireMap = function(onFireJSON) {
 };
 
 var createPieceMap = function(searchJSON) {
+    $(".piece-map > .column.grid").children().remove();
 
     for (var s in searchJSON) {
 
