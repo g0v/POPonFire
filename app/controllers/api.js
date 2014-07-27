@@ -56,6 +56,8 @@ exports.toSearch = function(req, res, next) {
         if (req.query[fields[i]] && data[fields[i]] !== req.query[fields[i]])
           return false;
       }
+      if (req.query.keyword && data.addr.indexOf(req.query.keyword) == -1)
+        return false;
       return true;
     }
 
