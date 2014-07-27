@@ -3,61 +3,61 @@ extends layouts/default
 block content
     .main.container
         .ui.left.aligned
-            .navbar
-                .ui.right.aligned.header                  
-                    i.circular.question.icon 
-                    | 何謂火線         
-            .logo
-                img.ui.medium.image(src="http://placehold.it/350x150&text=POP+on+Fire(Pre-Alpha)")
+            .ui.two.column.grid
+                #logo.column
+                    img.ui.medium.image(src="http://placehold.it/350x150&text=POP+on+Fire(Pre-Alpha)")
+                .column
+                    .ui.small.icon.message
+                        i.circular.question.icon
+                        .content POP 是指公有土地資產 (Publicly Owned Property)，這些土地資源的產權是公有，是屬於全民的公共資產。
 
-            
             .ui.segment.fire-map
-                .ui.red.ribbon.label 
+                .ui.red.ribbon.label
                   | 火線地圖
                 #fire-map-canvas
-                
-            .ui.segment.search-box   
-                .ui.blue.ribbon.label 
+
+            .ui.segment.search-box
+                .ui.blue.ribbon.label
                   | 檢索
-                .search-bar.ui.compact.menu
+                #search-bar.ui.compact.menu
                     .ui.selection.dropdown.item
                         .text
-                          | 地點 
+                          | 地點
                         i.dropdown.icon
                         .menu
                             -var cityList = JSON.parse(cities)
                             -for(var city in cityList)
                                 a.item(onclick="window.search.setCity('#{city}')")
-                                  | #{city}  
+                                  | #{city}
 
                     .ui.selection.dropdown.item
                         .text
-                          | 開發方式 
+                          | 開發方式
                         i.dropdown.icon
                         .menu
                             -var devWayList = JSON.parse(devWays)
                             -for(var devWay in devWayList)
                                 a.item(onclick="window.search.setDevWay('#{devWay}')")
-                                  | #{devWay}                  
-   
+                                  | #{devWay}
+
                     .ui.selection.dropdown.item
                         .text
-                          | 經營單位 
+                          | 經營單位
                         i.dropdown.icon
                         .menu
                             -var unitList = JSON.parse(units)
                             -for(var unit in unitList)
-                                  a.item(onclick="window.search.setUnit('#{unit}')") 
-                                    | #{unit}                                        
-                    
+                                  a.item(onclick="window.search.setUnit('#{unit}')")
+                                    | #{unit}
+
                     .right.compact.menu
                         .item
                             .ui.icon.input
                                 input(type="text" id="searchKeyword" placeholder="地名, 人名...")
                                 i.search.icon(onclick="window.search.setKeyword(document.getElementById('searchKeyword').value)")
 
-            .ui.segment.piece-map    
-              .ui.three.column.grid 
-        
+            .ui.segment.piece-map
+              .ui.three.column.grid
 
-        
+
+
