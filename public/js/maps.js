@@ -75,6 +75,7 @@ var createOnFireMap = function(onFireJSON) {
     create the piece map.
 */
 var createPieceMap = function(searchJSON) {
+    $(".piece-map > .column.grid").children().remove();
 
     for (var s in searchJSON) {
 
