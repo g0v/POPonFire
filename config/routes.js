@@ -6,6 +6,8 @@ var api = require('../app/controllers/api');
 module.exports = function(app,config){
     app.get('/api/onfire', api.onFire);
     app.get('/api/search', api.toSearch);
+    app.get('/api/taipei/:area', api.atTaipei);
 
     app.get('/',main.index);
+
 };

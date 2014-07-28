@@ -13,6 +13,9 @@ var app = express();
 // setting the app name
 app.set('appName', config.appName);
 
+// setting the env config
+app.set('envConfig', envConfig);
+
 // bootstrap express configurations
 require('./config/express')(app,envConfig);
 

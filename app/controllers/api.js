@@ -86,5 +86,22 @@ exports.toSearch = function(req, res, next) {
     res.send(fakedata.filter(by_query));
 };
 
+exports.atTaipei = function(req, res, next) {
+  var area = req.param('area').trim();
+  var GeoJSON = {};
+  var dataPath = req.app.get('envConfig')['dataPath'];
+
+  try{
+    GeoJSON = require(dataPath + '/taipei/' + area + '.json');
+  }catch(err) {
+    GeoJSON = {
+      'error' : true,
+      'message': "Could not find the area : " + area
+    };
+  }
+
+  res.send(GeoJSON);
+};
+
 
 
