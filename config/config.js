@@ -15,6 +15,7 @@ module.exports = {
         root: rootPath,
         viewPath: rootPath + '/app/views',
         staticPath: rootPath + '/public',
+        dataPath: rootPath + '/data',
         viewEngine: 'jade',
     },
 
