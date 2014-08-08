@@ -4,7 +4,7 @@
   "description": "公有地大行動網站",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp serve"
   },
   "author": "dz1984",
   "license": "MIT",
@@ -17,6 +17,8 @@
     "jade": "*",
     "gulp": "~3.8.5",
     "gulp-nodemon": "~1.0.4",
-    "gulp-jshint": "^1.7.1"
+    "gulp-jshint": "^1.7.1",
+    "gulp-livescript": "~1.0.3",
+    "LiveScript": "~1.2.0"
   }
 }
