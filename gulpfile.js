@@ -3,6 +3,13 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var jshint = require('gulp-jshint');
+var gulpLiveScript = require('gulp-livescript');
+
+gulp.task('build', ['jshint'], function () {
+  return gulp.src(['./public/js/*.ls'])
+    .pipe(gulpLiveScript({bare: true}))
+    .pipe(gulp.dest('./public/js'));
+});
 
 gulp.task('jshint', function() {
   return gulp.src(['./public/js/*.js', './config/*.js', './app/controllers/*.js'])
@@ -10,7 +17,7 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default', { verbose: true }));
 });
 
-gulp.task('serve',['jshint'], function() {
+gulp.task('serve', ['build'], function() {
     nodemon({
         script: 'server.js',
    })
@@ -20,6 +27,6 @@ gulp.task('serve',['jshint'], function() {
 });
 
 
-gulp.task('default', ['jshint'], function(){
+gulp.task('default', ['build'], function(){
 
 });
