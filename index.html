@@ -19,58 +19,23 @@
   </head>
 
   <body>
-      <section class="page header-page">
-        <div class="text-vertical-center">
-          <h1>住在天龍國的子民們</h1>
-          <h3>想知道附近有多少公有地嗎？</h3><a href="#about"><i class="big circular green double angle down icon"></i></a>
-        </div>
-      </section>
-      <section id="about" class="about-page page">
-        <div class="text-vertical-center">
-          <h1>什麼是公有地？</h1>
-          <h3>我也不知道，但你可以從<a href="http://hackfoldr.org/POPonFire" class="big ui red button">這裡</a>找到答案</h3><a href="#area"><i class="big circular orange double angle down icon"></i></a>
-        </div>
-      </section>
-      <section id="area" class="area-page page">
-        <div class="text-vertical-center">
-          <h1>最想知道哪一區？</h1>
-          <div class="ui selection dropdown choice-area">
-            <input type="hidden" name="area">
-            <div class="default text"> </div><i class="dropdown icon"></i>
-            <div class="menu">
-              <a data-value="中正區" class="item">中正區</a>
-              <a data-value="大同區" class="item">大同區</a>
-              <a data-value="中山區" class="item">中山區</a>
-              <a data-value="萬華區" class="item">萬華區</a>
-              <a data-value="信義區" class="item">信義區</a>
-              <a data-value="松山區" class="item">松山區</a>
-              <a data-value="大安區" class="item">大安區</a>
-              <a data-value="南港區" class="item">南港區</a>
-              <a data-value="北投區" class="item">北投區</a>
-              <a data-value="內湖區" class="item">內湖區</a>
-              <a data-value="士林區" class="item">士林區</a>
-              <a data-value="文山區" class="item">文山區</a>
+    <div class="container">
+        <div class="ui piled segment">
+          <div class="ui top right attached label">號外</div>
+          <div class="ui yellow icon message ">
+            <i class="thumbs up outline icon"></i>
+            <div class="content">
+              <div class="header">天龍特公地 大改版了喔！</div>
+              <p>
+                <a href="http://taipei-pop.heroku.com" class="ui link">
+                  請前往 天龍特公地 v2.0
+                  <i class="external url icon"></i>
+                </a>
+              </p>
             </div>
           </div>
         </div>
-      </section>
-      <section id="map" class="map-page page">
-        <div id="map-canvas"></div>
-        <div class="text-vertical-center map-notice">
-          <h1>請選擇地區</h1>
-        </div>
-      </section>
-      <footer>
-        <div class="ui divided horizontal link list">
-          <div class="item">資料來源：<a href="http://data.g0v.tw">g0v零時資料中心</a></div>
-          <div class="item">&copy; 2014 公有地大行動</div>
-        </div>
-      </footer>
-
-    <script src='http://code.jquery.com/jquery-1.11.1.min.js'></script><script src='http://cdn.jsdelivr.net/semantic-ui/0.18.0/javascript/semantic.min.js'></script>
-    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-    <script src="js/index.js"></script>
-
+      </div>
   </body>
 
 </html>
